@@ -1,0 +1,9 @@
+streamlit
+geopandas
+rasterio
+numpy
+pandas
+plotly
+folium
+streamlit-folium
+Pillow
