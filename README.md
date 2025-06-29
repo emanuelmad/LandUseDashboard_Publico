@@ -1,54 +1,59 @@
-# 🌱 LandUseDashboard Público
+# 🌱 Land Use Dashboard - Várzea, RS
 
-Este projeto apresenta um **Dashboard Interativo de Classificação de Uso e Cobertura da Terra** com base em imagens Sentinel-2 processadas localmente, utilizando **Random Forest**.
+Este repositório contém a versão pública do **Dashboard de Classificação de Uso e Cobertura da Terra**, desenvolvido com foco na **Bacia Hidrográfica do Rio da Várzea (RS)**, utilizando imagens Sentinel-2 classificadas com modelo Random Forest.
 
-Desenvolvido com **Python**, **Streamlit**, **Plotly** e bibliotecas de geoprocessamento.
-
----
-
-## 🔍 Funcionalidades
-
-- Visualização de mapas classificados por ano.
-- Gráficos interativos com área por classe.
-- Tendência anual de métricas e classes.
-- Tabelas exportáveis (área e métricas).
-- Totalmente **offline** (sem Google Earth Engine).
+O dashboard permite a visualização interativa de mapas classificados, métricas de avaliação (como F1-Score) e tendências anuais por classe de uso do solo.
 
 ---
 
-## 📦 Estrutura da Pasta Pública
+## 🔗 Acesse o Dashboard
+
+> [Clique aqui para acessar o app online](https://land-use-dashboard.streamlit.app/)  
+> *(será atualizado assim que o deploy no Streamlit Cloud for concluído)*
+
+---
+
+## 📦 Funcionalidades
+
+- Visualização interativa do **mapa classificado por ano**
+- Gráficos dinâmicos de **área por classe** e **tendência temporal**
+- Tabelas e **download em CSV** das métricas e estatísticas por classe
+- Dashboard totalmente construído com **Python + Streamlit + Plotly + Folium**
+
+---
+
+## 🗂️ Estrutura dos dados (versão pública)
+
+Esta versão contém apenas os dados processados essenciais para visualização:
+
 LandUseDashboard_Publico/
-├── app.py
-├── requirements.txt
+├── app.py # Código principal do dashboard Streamlit
 ├── outputs/
-│ ├── maps/ # GeoTIFFs classificados (ano base)
-│ ├── metrics/ # CSV com métricas por ano
-│ └── area_por_classe.csv # Tabela com áreas por classe/ano
+│ ├── maps/ # Mapas classificados por ano (.tif)
+│ ├── area_por_classe.csv # Tabela com área por classe (ha)
+│ └── metrics/ # Métricas de avaliação por ano (.csv)
 ├── data/
 │ └── bacia/
-│ └── limite_bacia_varzea.shp (.shx, .dbf, .prj...)
-└── README.md
-
-
+│ └── limite_bacia_varzea.shp # Shapefile da bacia (vetor)
+├── requirements.txt # Dependências do projeto
+└── README.md # Este arquivo
 ---
 
-## 🚀 Como Executar Localmente
+## ⚙️ Requisitos para execução local
 
-1. Clone o repositório:
+Instale as dependências com:
 
 ```bash
-git clone https://github.com/emanuelmad/LandUseDashboard_Publico.git
-cd LandUseDashboard_Publico
-
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
-
 pip install -r requirements.txt
 
 streamlit run app.py
 
-🌍 Desenvolvido por
+👨‍💻 Desenvolvedor
 Prof. Dr. Emanuel Araújo Silva
-Laboratório de Geoprocessamento e Sensoriamento Remoto (LGSR)
-Universidade Federal de Santa Maria (UFSM) – Frederico Westphalen – RS
+Laboratório de Geoprocessamento e Sensoriamento Remoto - LGSR
+Universidade Federal de Santa Maria – UFSM/FW
+📧 emanuel.ufrpe@gmail.com
+
+📜 Licença
+Este projeto está disponível para fins acadêmicos e de demonstração.
+Consulte o autor para uso comercial ou adaptação em larga escala.
